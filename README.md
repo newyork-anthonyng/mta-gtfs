@@ -30,7 +30,7 @@ In order to use the MTA real-time APIs, you will need an MTA API key from here: 
 
 ### Get subway stop info
 
-Get ids, name, and lat/long for all subway stops.
+Get ids, name, and lat/long for all subway stops (info from /lib/data/gtfs/stops.txt file).
 
 ```Javascript
 mta.stop().then(function (result) {
@@ -48,6 +48,12 @@ mta.stop(635).then(function (result) {
 });
 ```
 An array of ids may also be passed to this method.
+
+```Javascript
+mta.stop([635, 636, 637]).then(function (result) {
+  console.log(result);
+});
+```
 
 The stop ids given here are used in `mta.schedule()`.
 
